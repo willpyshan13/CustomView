@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
  */
 public class FlowRadioGroup extends RadioGroup {
     private static final String TAG = "FlowRadioGroup";
+    int devide = 30;
     public FlowRadioGroup(Context context) {
         super(context);
     }
@@ -47,19 +48,19 @@ public class FlowRadioGroup extends RadioGroup {
         int tempWidth = 0;
         for (int i = 0; i < getChildCount(); i++) {
             View childView = getChildAt(i);
-            childRightt = tempWidth + childView.getMeasuredWidth();
+            childRightt = tempWidth + childView.getMeasuredWidth() +devide;
             if (childRightt > layoutWidth) {
                 raw++;
                 tempWidth = 0;
-                childRightt = tempWidth + childView.getMeasuredWidth();
+                childRightt = tempWidth + childView.getMeasuredWidth()+devide;
             }
-            childLeft = tempWidth;
-            childTop  = raw * childView.getMeasuredHeight();
-            childBottom= (raw + 1) * childView.getMeasuredHeight();
+            childLeft = tempWidth+devide;
+            childTop  = raw * (childView.getMeasuredHeight())+devide*raw;
+            childBottom= (raw + 1) * (childView.getMeasuredHeight())+devide*raw;
 
             Log.d("FlowRadioGroup", "childLeft:" + childLeft + "  childRightt:" + childRightt + "  childTop:" + childTop + "   childBottom:" + childBottom);
             childView.layout(childLeft, childTop, childRightt, childBottom);
-            tempWidth += childView.getMeasuredWidth();
+            tempWidth = tempWidth+childView.getMeasuredWidth()+devide;
         }
     }
 }
