@@ -53,19 +53,19 @@ public class ActivityOrderView extends ViewGroup {
             view = new TextView(mContext);
             switch (i%5){
                 case 1:
-                    view.setBackgroundResource(R.drawable.blue);
+                    view.setBackgroundResource(R.drawable.bg_common_blue);
                     break;
                 case 2:
-                    view.setBackgroundResource(R.drawable.gray);
+                    view.setBackgroundResource(R.drawable.bg_common_gray);
                     break;
                 case 3:
-                    view.setBackgroundResource(R.drawable.green);
+                    view.setBackgroundResource(R.drawable.bg_common_green);
                     break;
                 case 4:
-                    view.setBackgroundResource(R.drawable.circle);
+                    view.setBackgroundResource(R.drawable.bg_common_);
                     break;
                 case 0:
-                    view.setBackgroundResource(R.drawable.red);
+                    view.setBackgroundResource(R.drawable.bg_common_red);
                     break;
             }
             addView(view);
