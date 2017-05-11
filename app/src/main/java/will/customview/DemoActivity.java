@@ -20,6 +20,7 @@ public class DemoActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_demo);
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.button3).setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +31,9 @@ public class DemoActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.button2:
                 startActivity(new Intent(DemoActivity.this,FlowRadioGroupActivity.class));
+                break;
+            case R.id.button3:
+                startActivity(new Intent(DemoActivity.this,ShapeActivity.class));
                 break;
         }
     }
