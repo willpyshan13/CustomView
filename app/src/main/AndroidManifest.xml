@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".FlowRadioGroupActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ShapeActivity"></activity>
+        <activity android:name=".ShapeActivity" />
+        <activity android:name=".RecycleActivity"></activity>
+        <activity android:name=".AninmalActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
