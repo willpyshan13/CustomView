@@ -26,7 +26,25 @@ public class AninmalActivity extends AppCompatActivity {
         button8 = (Button) findViewById(R.id.button8);
         button9 = (Button) findViewById(R.id.button9);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.myanimal);
-        animation.setRepeatCount(100);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                button6.startAnimation(animation);
+                button7.startAnimation(animation);
+                button8.startAnimation(animation);
+                button9.startAnimation(animation);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
         button6.startAnimation(animation);
         button7.startAnimation(animation);
         button8.startAnimation(animation);
