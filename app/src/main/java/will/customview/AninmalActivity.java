@@ -15,7 +15,7 @@ import android.widget.Button;
  * @CreatedTime: 2017/6/1 10:14
  */
 public class AninmalActivity extends AppCompatActivity {
-    Button button6,button7,button8,button9 ;
+    Button button6,button7,button8,button9,button10 ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class AninmalActivity extends AppCompatActivity {
         button7 = (Button) findViewById(R.id.button7);
         button8 = (Button) findViewById(R.id.button8);
         button9 = (Button) findViewById(R.id.button9);
+        button10 = (Button) findViewById(R.id.button10);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.myanimal);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -38,6 +39,7 @@ public class AninmalActivity extends AppCompatActivity {
                 button7.startAnimation(animation);
                 button8.startAnimation(animation);
                 button9.startAnimation(animation);
+                button10.startAnimation(animation);
             }
 
             @Override
@@ -49,6 +51,7 @@ public class AninmalActivity extends AppCompatActivity {
         button7.startAnimation(animation);
         button8.startAnimation(animation);
         button9.startAnimation(animation);
+        button10.startAnimation(animation);
     }
 
 }
