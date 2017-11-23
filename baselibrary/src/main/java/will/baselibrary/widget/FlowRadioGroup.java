@@ -13,7 +13,8 @@ import android.widget.RadioGroup;
  */
 public class FlowRadioGroup extends RadioGroup {
     private static final String TAG = "FlowRadioGroup";
-    int devide = 30;
+    int mDevide = 30;
+
     public FlowRadioGroup(Context context) {
         super(context);
     }
@@ -27,10 +28,20 @@ public class FlowRadioGroup extends RadioGroup {
         Log.d("FlowRadioGroup", "onMeasure");
         int layoutWidth = MeasureSpec.getSize(widthMeasureSpec);
         int layoutHeight = MeasureSpec.getSize(heightMeasureSpec);
+        int childRightt = 0;
+        int raw = 0;
+        int tempWidth = 0;
         for (int i = 0; i < getChildCount(); i++) {
             View childView = getChildAt(i);
             childView.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
             Log.d("FlowRadioGroup", "onMeasure  measure childWidth:" + childView.getMeasuredWidth());
+            childRightt = tempWidth + childView.getMeasuredWidth() + mDevide;
+            if (childRightt > layoutWidth) {
+                raw++;
+                tempWidth = 0;
+            }
+            layoutHeight = (childView.getMeasuredHeight() + mDevide) * (raw + 1);
+            tempWidth = tempWidth + childView.getMeasuredWidth() + mDevide;
         }
         Log.d("FlowRadioGroup", "onMeasure  layoutWidth:" + layoutWidth + "  layoutHeight:  " + layoutHeight);
         setMeasuredDimension(layoutWidth, layoutHeight);
@@ -48,19 +59,20 @@ public class FlowRadioGroup extends RadioGroup {
         int tempWidth = 0;
         for (int i = 0; i < getChildCount(); i++) {
             View childView = getChildAt(i);
-            childRightt = tempWidth + childView.getMeasuredWidth() +devide;
+            childRightt = tempWidth + childView.getMeasuredWidth() + mDevide;
             if (childRightt > layoutWidth) {
                 raw++;
                 tempWidth = 0;
-                childRightt = tempWidth + childView.getMeasuredWidth()+devide;
+                childRightt = tempWidth + childView.getMeasuredWidth() + mDevide;
             }
-            childLeft = tempWidth+devide;
-            childTop  = raw * (childView.getMeasuredHeight())+devide*raw;
-            childBottom= (raw + 1) * (childView.getMeasuredHeight())+devide*raw;
+            childLeft = tempWidth + mDevide;
+            childTop = raw * (childView.getMeasuredHeight()) + mDevide * raw;
+            childBottom = (raw + 1) * (childView.getMeasuredHeight()) + mDevide * raw;
 
             Log.d("FlowRadioGroup", "childLeft:" + childLeft + "  childRightt:" + childRightt + "  childTop:" + childTop + "   childBottom:" + childBottom);
             childView.layout(childLeft, childTop, childRightt, childBottom);
-            tempWidth = tempWidth+childView.getMeasuredWidth()+devide;
+            tempWidth = tempWidth + childView.getMeasuredWidth() + mDevide;
         }
+
     }
 }

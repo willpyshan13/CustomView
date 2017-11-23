@@ -23,6 +23,7 @@ public class DemoActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button3).setOnClickListener(this);
         findViewById(R.id.button4).setOnClickListener(this);
         findViewById(R.id.button5).setOnClickListener(this);
+        findViewById(R.id.button6).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +43,9 @@ public class DemoActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.button5:
                 startActivity(new Intent(DemoActivity.this,AninmalActivity.class));
+                break;
+            case R.id.button6:
+                startActivity(new Intent(DemoActivity.this,BaseNfcActivity.class));
                 break;
         }
     }
