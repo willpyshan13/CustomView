@@ -1,11 +1,11 @@
 package will.customview;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = getLayoutInflater().inflate(R.layout.item,null);
+            View view = getLayoutInflater().inflate(R.layout.activity_overview_item,null);
             return new ViewH(view);
         }
 
@@ -69,19 +69,19 @@ public class MainActivity extends AppCompatActivity {
             view = new TextView(this);
             switch (i%5){
                 case 1:
-                    view.setBackgroundResource(R.drawable.blue);
+//                    view.setBackgroundResource(R.drawable.blue);
                     break;
                 case 2:
-                    view.setBackgroundResource(R.drawable.gray);
+//                    view.setBackgroundResource(R.drawable.gray);
                     break;
                 case 3:
-                    view.setBackgroundResource(R.drawable.green);
+//                    view.setBackgroundResource(R.drawable.green);
                     break;
                 case 4:
-                    view.setBackgroundResource(R.drawable.circle);
+//                    view.setBackgroundResource(R.drawable.circle);
                     break;
                 case 0:
-                    view.setBackgroundResource(R.drawable.red);
+//                    view.setBackgroundResource(R.drawable.red);
                     break;
             }
             morderView.addView(view);

@@ -3,10 +3,7 @@ package will.customview;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
-
-import will.baselibrary.widget.FlowRadioGroup;
 
 /**
  * @Desc: TODO
@@ -15,7 +12,7 @@ import will.baselibrary.widget.FlowRadioGroup;
  */
 public class DemoActivity extends Activity implements View.OnClickListener{
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
         findViewById(R.id.button).setOnClickListener(this);
@@ -24,6 +21,7 @@ public class DemoActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button4).setOnClickListener(this);
         findViewById(R.id.button5).setOnClickListener(this);
         findViewById(R.id.button6).setOnClickListener(this);
+        findViewById(R.id.button7).setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +44,9 @@ public class DemoActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.button6:
                 startActivity(new Intent(DemoActivity.this,BaseNfcActivity.class));
+                break;
+            case R.id.button7:
+                startActivity(new Intent(DemoActivity.this,TranslateActivity.class));
                 break;
         }
     }

@@ -86,8 +86,8 @@ public class ActivityOrderView extends ViewGroup {
             childHeight = MeasureSpec.makeMeasureSpec(heightSpec, MeasureSpec.UNSPECIFIED);
             Log.d(TAG, "childWidth1 " + childWidth + "   childHeight  " + childHeight);
             childView.measure(childWidth, childHeight);
-            childWidth = childView.getWidth();
-            childHeight = childView.getHeight();
+            childWidth = childView.getMeasuredWidth();
+            childHeight = childView.getMeasuredHeight();
             Log.d(TAG, "childWidth2 " + childWidth + "   childHeight  " + childHeight);
         }
         widthSpec = (childWidth+2*mDivider)*mDefaultXCount;
