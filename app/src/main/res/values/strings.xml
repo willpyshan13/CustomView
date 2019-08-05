@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">CustomView</string>
+
+    <string name="string_client_id">586130543915-rkorqupa08u460l9ojupifviqc9jvp1g.apps.googleusercontent.com</string>
+    <string name="sercet_id">AYBSIYgIIaKfDO9Pc_CLJyId</string>
 </resources>

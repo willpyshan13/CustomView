@@ -3,6 +3,7 @@
           package="will.customview">
 
     <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -26,6 +27,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".ShapeActivity"/>
         <activity android:name=".RecycleActivity"/>
+        <activity android:name=".GoogleSigninActivity"/>
         <activity
             android:name=".AninmalActivity"
             android:screenOrientation="landscape"/>

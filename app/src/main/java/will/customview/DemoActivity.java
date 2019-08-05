@@ -22,6 +22,7 @@ public class DemoActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button5).setOnClickListener(this);
         findViewById(R.id.button6).setOnClickListener(this);
         findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button8).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +48,9 @@ public class DemoActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.button7:
                 startActivity(new Intent(DemoActivity.this,TranslateActivity.class));
+                break;
+            case R.id.button8:
+                startActivity(new Intent(DemoActivity.this,GoogleSigninActivity.class));
                 break;
         }
     }
